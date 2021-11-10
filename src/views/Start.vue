@@ -1,5 +1,6 @@
 <template>
   <div>
+    <img alt="Vue logo" src="../assets/logo.png">
     <button @click="start">开始任务</button>
   </div>
 </template>
