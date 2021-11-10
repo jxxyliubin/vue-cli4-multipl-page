@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
 import Start from '../views/Start.vue' //首页组件需要引入进来
 
 //路由的配置数组
@@ -33,7 +33,8 @@ const routes = [
 
 //创建路由对象
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  // history: createWebHistory(process.env.BASE_URL),
+  history: createWebHashHistory(process.env.BASE_URL),
   routes
 })
 
