@@ -37,8 +37,8 @@ const routes = [
 
 //创建路由对象
 const router = createRouter({
-  // history: createWebHistory(process.env.BASE_URL),
-  history: createWebHashHistory(process.env.BASE_URL),
+  history: createWebHistory(process.env.BASE_URL),
+  // history: createWebHashHistory(process.env.BASE_URL),
   routes
 })
 
