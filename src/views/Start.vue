@@ -7,7 +7,6 @@
 <script>
 import { defineComponent, onMounted, onUnmounted, ref } from "vue";
 import { useRouter } from "vue-router";
-import Axios from 'axios'
 import axios from "axios";
 
 export default defineComponent({
