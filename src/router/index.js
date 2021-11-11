@@ -27,7 +27,11 @@ const routes = [
     path: '/home',
     name: 'Home',
     //按需引入，节约性能。除首页外，一般都按需引入。
-    component: () => import(/* webpackChunkName: "about" */ '../views/Home.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/Home.vue'),
+    beforeEnter: (to, from, next) => {
+      document.getElementById("title").innerHTML = 'Home';
+      next();
+    }
   }
 ]
 

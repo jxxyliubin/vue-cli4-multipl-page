@@ -7,6 +7,8 @@
 <script>
 import { defineComponent, onMounted, onUnmounted, ref } from "vue";
 import { useRouter } from "vue-router";
+import Axios from 'axios'
+import axios from "axios";
 
 export default defineComponent({
   name: "Start",
@@ -31,17 +33,24 @@ export default defineComponent({
       });
     };
 
+    let getDdata = ()=>{
+      axios.get('/ajax')
+      .then(res=>{})
+      .catch(err=>{})
+    };
+
     //onMounted 组件挂载的过程
+    //数据 dom……
+    //发请求
+    //数据初始化的操作
+    //接收由路由传递的参数
     onMounted(()=>{
-      //数据 dom……
-      //发请求
-      //数据初始化的操作
-      //接收由路由传递的参数
+      getDdata();
       console.log('onMounted')
     });
     //onUnMounted 组件卸载
+    //清除定时器 清除闭包函数……
     onUnmounted( ()=>{
-      //清除定时器 清除闭包函数……
       console.log('onUnmounted')
     } )
 
