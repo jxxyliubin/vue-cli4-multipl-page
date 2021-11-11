@@ -34,7 +34,19 @@ export default defineComponent({
     };
 
     let getDdata = ()=>{
-      axios.get('/ajax')
+      axios.get('/ajax', {
+        params: {
+          ID: 12345
+        }
+      })
+      .then(res=>{})
+      .catch(err=>{})
+    };
+    let postDdata = ()=>{
+      axios.post('/ajax', {
+        firstName: 'Fred', 
+        lastName: 'Flintstone'
+      })
       .then(res=>{})
       .catch(err=>{})
     };
