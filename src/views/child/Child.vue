@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button>子组件</button>
+    <h2>子组件</h2>
     <p>{{parentMsg}}</p>
     <button @click="send">传值给父组件</button>
   </div>

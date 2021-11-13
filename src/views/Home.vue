@@ -29,6 +29,7 @@ export default defineComponent({
   setup(props, ctx) {
     let value = ref('');
     let store = useStore();
+    //在setup函数中使用计算属性来使用vuex
     let list  = computed(()=>{
       return store.state.list
     })

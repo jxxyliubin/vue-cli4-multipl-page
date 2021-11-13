@@ -12,12 +12,6 @@ const routes = [
     component: Start //首页对应的组件，已用import引入
   },
   {
-    path: '/about',
-    name: 'About',
-    //按需引入，节约性能。除首页外，一般都按需引入。
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  },
-  {
     path: '/detail',
     name: 'Detail',
     //按需引入，节约性能。除首页外，一般都按需引入。
