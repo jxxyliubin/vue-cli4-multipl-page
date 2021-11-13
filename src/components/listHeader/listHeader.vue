@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div id="header">
+    <p>listHeader.vue:</p>
     <input
       type="text"
       placeholder="请输入任务名称"
@@ -12,7 +13,7 @@
 <script>
 import { defineComponent, ref } from "vue";
 export default defineComponent({
-  name: "navHeard", //组件名称 //接收父组件的数据
+  name: "listHeard", //组件名称 //接收父组件的数据
   props: {}, //定义子组件
   components: {},
   emits:['add'],
@@ -32,7 +33,10 @@ export default defineComponent({
 });
 </script>
 <style scoped lang="scss">
-input {
+#header{
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 4px;
   margin-bottom: 20px;
 }
 </style>

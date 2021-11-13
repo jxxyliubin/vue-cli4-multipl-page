@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="child">
     <h2>子组件</h2>
     <p>{{parentMsg}}</p>
     <button @click="send">传值给父组件</button>
@@ -27,7 +27,7 @@
       //接收到的父组件传来的数据
       let parentMsg = props.msg;
 
-      let childMsg = ref('这是子组件里的数据');
+      let childMsg = ref('这是子组件里的数据，发送给父组件显示');
       let send = ()=>{
         //通过emit分发事件
         //第1个参数是事件的名称，第2个参数是传递的数据。只能传两个参数，多个数据时需要用数组或对象
@@ -44,4 +44,8 @@
 </script>
 
 <style scoped lang="scss">
+#child{
+  background-color: #eee;
+  padding: 10px;
+}
 </style>

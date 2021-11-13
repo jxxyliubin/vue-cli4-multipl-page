@@ -1,5 +1,6 @@
 <template>
-  <div v-if="list.length > 0">
+  <div v-if="list.length > 0" id="main">
+    <p>listMain.vue: </p>
     <div v-for="(item, index) in list" :key="index">
       <div class="item">
         <input type="checkbox" v-model="item.complete" />
@@ -16,7 +17,7 @@
 import { defineComponent, ref, } from "vue";
 
 export default defineComponent({
-  name: "navMain", //组件名称 
+  name: "listMain", //组件名称 
   //接收父组件的数据
   props: {
     list: {
@@ -38,6 +39,10 @@ export default defineComponent({
 });
 </script>
 <style scoped lang="scss">
+#main{
+  background-color: #ededed;
+  margin-bottom: 15px;
+}
 .item {
   height: 35px;
   line-height: 35px;

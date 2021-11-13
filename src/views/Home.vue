@@ -1,15 +1,15 @@
 <template>
   <div>
-    <nav-header @add="add"></nav-header>
-    <nav-main :list="list" @del="del"></nav-main>
-    <nav-footer :list="list" @clear="clear"></nav-footer>  
+    <list-header @add="add"></list-header>
+    <list-main :list="list" @del="del"></list-main>
+    <list-footer :list="list" @clear="clear"></list-footer>  
   </div>
 </template>
 <script>
 // @符号表示 src 目录
-import NavHeader from "@/components/navHeader/NavHeader";
-import NavMain from "@/components/navMain/NavMain";
-import NavFooter from "@/components/navFooter/NavFooter";
+import listHeader from "@/components/listHeader/listHeader";
+import listMain from "@/components/listMain/listMain";
+import listFooter from "@/components/listFooter/listFooter";
 import { defineComponent, ref, computed } from "vue";
 import { useStore } from "vuex";
 
@@ -21,9 +21,9 @@ export default defineComponent({
   //定义子组件
   //键和值相等可以只写键
   components: {
-    NavHeader: NavHeader,
-    NavMain,
-    NavFooter,
+    listHeader: listHeader,
+    listMain,
+    listFooter,
   },
   emits:['add'],
   setup(props, ctx) {
@@ -35,7 +35,7 @@ export default defineComponent({
     })
     let add = (val)=>{
       value.value = val;
-      //将子组件NavHeader传来的任务添加到list
+      //将子组件listHeader传来的任务添加到list
       //判断任务是否已存在
       let flag = true;
       list.value.map(item => {
