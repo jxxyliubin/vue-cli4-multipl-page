@@ -5,22 +5,27 @@
   </div>
 </template>
 <script>
-import { defineComponent, onMounted, onUnmounted, ref } from "vue";
+import { defineComponent, onMounted, onUnmounted, ref, reactive } from "vue";
 import { useRouter } from "vue-router";
 import axios from "axios";
 
 export default defineComponent({
   name: "Start",
   props: {},
-  components: {},
   // setup 组件创建的过程
   setup(props, ctx) {
+    //props：组件接受的参数，context是一个对象，包含 attrs, slots, emit, expose这些属性
+    console.log(props,ctx);
+
+    //定义变量
     let router = useRouter();
     let name = ref("jack");
     let num = ref(10);
-    let obj = ref({
+    let obj = reactive({
       msg: "start",
     });
+
+    //定义方法
     let start = () => {
       router.push({
         name: 'Home',
@@ -71,6 +76,9 @@ export default defineComponent({
       start,
     };
   },
+  components: {},
+  methods: {},
+  computed: {},
 });
 </script>
 <style scoped lang="scss">
